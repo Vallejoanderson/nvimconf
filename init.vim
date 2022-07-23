@@ -1,4 +1,4 @@
-set number
+set number 
 set mouse=a
 set tabstop=4
 syntax enable
@@ -7,6 +7,7 @@ set encoding=utf-8
 set relativenumber
 set sw=2
 set smarttab
+set noswapfile
 
 call plug#begin('~/.vim/plugged')
 
@@ -40,6 +41,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'BurntSushi/ripgrep'
 
+"Typing
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 "Telescope configuration
 " Find files using Telescope command-line sugar.
@@ -48,13 +52,7 @@ nnoremap <space>fg <cmd>Telescope live_grep<cr>
 nnoremap <space>fb <cmd>Telescope buffers<cr>
 nnoremap <space>fh <cmd>Telescope help_tags<cr>
 
-" Using Lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-"NerdTree Configuration
+"Tabs Managmanet Configuration
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-l> :bNext<CR>
 nnoremap <C-x> :bdelete<CR>
