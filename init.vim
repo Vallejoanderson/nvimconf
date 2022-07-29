@@ -8,6 +8,10 @@ set relativenumber
 set sw=2
 set smarttab
 set noswapfile
+set clipboard+=unnamedplus
+set cursorline
+syntax on
+set ruler
 
 call plug#begin('~/.vim/plugged')
 
